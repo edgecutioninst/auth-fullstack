@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Authorization System
 
-## Getting Started
+A robust, full-stack authentication application built with Next.js 14, TypeScript, and MongoDB Atlas. This project features a modern Glassmorphism UI and handles the complete user lifecycle, including secure login, email verification, and password resets.
 
-First, run the development server:
+## Live Demo
+Link: https://auth-fullstack-six.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo Credentials
+Since this project uses Mailtrap for secure email sandboxing, you can use these pre-verified credentials to test the protected routes instantly:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Email: guest@desert.com
+* Password: password123
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+* Secure Auth: Implemented full Sign-Up, Login, and Logout flows using JWT and HTTP-only cookies.
+* Smart Middleware: Custom route protection that prevents unauthenticated users from accessing protected paths while ensuring logged-in users are redirected away from auth pages.
+* Sandbox Emailing: Integrated Nodemailer with Mailtrap to handle verification and password reset tokens safely.
+* Custom UI: A Desert themed interface built with Tailwind CSS, featuring backdrop-blur effects and responsive design.
+* Server-Side Logic: Utilizing Next.js API Routes and Server Actions for backend processing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+* Framework: Next.js 14 (App Router)
+* Language: TypeScript
+* Database: MongoDB Atlas (Mongoose)
+* Styling: Tailwind CSS
+* Deployment: Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Getting Started Locally
+
+1. Clone the repository:
+   git clone https://github.com/edgecutioninst/auth-fullstack.git
+
+2. Install dependencies:
+   npm install
+
+3. Set up .env: 
+   Create a .env file and add the following keys with your own credentials:
+   `
+   MONGO_URI=your_mongodb_connection_string
+   TOKEN_SECRET=your_secret_key
+   DOMAIN=http://localhost:3000
+   MAILTRAP_USER=your_mailtrap_user_id
+   MAILTRAP_PASS=your_mailtrap_password
+  `
+4. Run Development Server:
+   npm run dev
+
+---
+
+## Project Structure
+
+* src/app/api: Backend logic and route handlers.
+* src/app/profile: Protected user dashboard.
+* src/middleware.ts: Security layer for route management.
+* src/dbConfig: Database connection logic.
