@@ -46,13 +46,9 @@ Since this project uses Mailtrap for secure email sandboxing, you can use these 
 3. Set up .env: 
    Create a .env file and add the following keys with your own credentials:
    
-   MONGO_URI=your_mongodb_connection_string
-   TOKEN_SECRET=your_secret_key
-   DOMAIN=http://localhost:3000
-   MAILTRAP_USER=your_mailtrap_user_id
-   MAILTRAP_PASS=your_mailtrap_password
+   ```env MONGO_URI=your_mongodb_connection_string TOKEN_SECRET=your_secret_key DOMAIN=http://localhost:3000 MAILTRAP_USER=your_mailtrap_user_id MAILTRAP_PASS=your_mailtrap_password ```
    
-4. Run Development Server:
+5. Run Development Server:
    npm run dev
 
 ---
